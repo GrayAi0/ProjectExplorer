@@ -1,0 +1,57 @@
+{
+    "languages": {
+        "html-5": {
+            "ext": ".html", 
+
+            "multi-comments": "<!--{lines}-->", 
+
+            "name": "Html 5", 
+
+            "project": {
+                "index.html": ""
+            }, 
+
+            "run_argument": "{project_path}/index.html", 
+
+            "start_arguments": "edge {file}"
+        }, 
+
+        "node-javascript": {
+            "ext": ".js", 
+
+            "multi-comments": "/*{lines}*/", 
+
+            "name": "Node.js", 
+
+            "project": {
+                "{project_name}.js": ""
+            }, 
+
+            "run_argument": "node {project_name}/{project_name}.js", 
+
+            "single-comment": "// {line}", 
+
+            "start_arguments": "node {file}"
+        }, 
+
+        "python": {
+            "ext": ".py", 
+
+            "multi-comments": "'''{lines}'''", 
+
+            "name": "Python", 
+
+            "project": {
+                "__init__.py": "import {project_name}", 
+
+                "__main__.py": "print('Language created by script view automatically')"
+            }, 
+
+            "run_argument": "py -m {project_name}", 
+
+            "single-comment": "# {line}", 
+
+            "start_arguments": "py {file}"
+        }
+    }
+}

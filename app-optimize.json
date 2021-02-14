@@ -1,0 +1,17 @@
+{
+    "app_lang": "en", 
+
+    "browser": false, 
+
+    "color": "rgb(204, 240, 230)", 
+
+    "f_lang": "python", 
+
+    "port": 4020, 
+
+    "projects_meta_dir": "projects/.project_data", 
+
+    "projects_path": "projects/{lang}_projects", 
+
+    "theme": "dark"
+}
