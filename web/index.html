@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha View</title>
+    <link href="./css/main.css" rel='stylesheet'>
+    <link href="./css/index.css" rel='stylesheet'>    
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src='./js/res/vue.js'></script>
+    <script src='./js/res/jquery-3.5.1.js'></script>
+    <script src="./bootstrap/js/popper.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src='./js/main.js'></script>
+    <script src='./js/index.js'></script>
+</head>
+<body class='body-dark'>
+    <div class='init-page'><span>Be ready we inilazing the page new<div class="load spinner-border text-light"></div></span></div>
+    <div v-bind='{class:`root-${theme} root`}' class='root visible-sm'>
+        <button class='accordion btn btn-primary' onclick='Accordion_clicked(this)'>
+            Create project
+        </button>
+        <div v-bind='{class:`panel-${theme} panel panel`}' >
+                <div class="item form-group">
+                    <label for="input">Name: <small class='form-text text-muted'><font color=red>*</font>required</small></label>
+                    <input class="form-control" type="text" id="proj-name" placeholder="Enter project name" value="" autocomplete="on"/>
+                    <small class="form-text text-muted">You can't change project name</small>
+                </div>
+                
+                <div class="item form-group">
+                    <label for="input">Description:</label>
+                    <input class="form-control" type="text" id="proj-desc" name="inputName" placeholder="Enter project description" value="" autocomplete="on" />
+                    <small class="form-text text-muted">You can change it again</small>
+                </div>
+                <small id='chose_one' class="form-text text-muted">Chose one</small>
+                <div class="item btn-group">
+                    <div class='dropup' style='margin:10px 0'>
+                        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Language
+                        </button>
+                        <div class="dropdown-menu scrollable-menu dropdown-menu-right">
+                            <div v-for="lang in langs">
+                                <a class="dropdown-item" v-bind="{'lang-data':lang.key}" onclick='lang_chose(this)'>{{ lang.name }}</a>
+                            </div>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Add Custom language</a>
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <button class="item btn btn-outline-primary" onclick='CreateProject();' style="width: 100%;">Create project</button>
+
+        </div>
+        <div v-for="proj in projects">
+            <button v-bind='{class:`accordion accordion-${theme} btn btn-outline-dark`}' class='accordion accordion-dark btn btn-outline-dark' onclick='Accordion_clicked(this)'>
+                {{ proj.project_name }}
+                <a v-bind='{onclick:`DeleteProject("${proj.project_name}")`}' style='float:right;' class='btn btn-outline-danger delete'> 
+                    Delete
+                </a>
+            </button>
+            <div v-bind='{class:`panel-${theme} panel`}'>
+                <div>
+                    <p style='font-weight: 600;'>
+                        Description: <span style='font-weight:400;'>{{ proj.project_description }}</span>
+                    </p>
+
+                    <p style='font-weight: 600;'>
+                        Language: <span style='font-weight:400;'>{{ GetLanguage(proj.project_language).name }}</span>
+                    </p>
+                    <button style='float:right;' class='btn btn-outline-primary' disabled>
+                        View details
+                    </button>
+
+                    <div class='btn-group'>
+                        <button v-bind='{onclick:`run_project("${proj.project_name}")`}' v-show="proj.is_runnable" style='float:right;' class='btn btn-outline-info'>
+                            Run Project
+                        </button>
+                        <div class='btn-group'>
+                            <button v-bind='{onclick:`quick_open("${proj.project_name}")`}' style='float:right;' class='btn btn-outline-info'>
+                                Quick edit
+                            </button> 
+                            <button v-bind='{onclick:`eel.OpenProject("${proj.project_name}")`}' style='float:right;' class='btn btn-outline-info'>
+                                Open
+                            </button> 
+                            <button v-bind='{onclick:`eel.OpenFolder("${proj.project_name}")`}' style='float:right;' class='btn btn-outline-info'>
+                                Open Folder
+                            </button> 
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+    </div>
+</body>
+
+</html>
