@@ -1,0 +1,86 @@
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    border-radius: 0 !important;
+    outline: none;
+    transition: 0.4s;
+
+}
+
+
+.accordion-dark {
+    background-color: rgb(75, 75, 75);
+    color: rgb(230, 230, 230);
+}
+
+
+.accordion-light {
+    background-color: rgb(230, 230, 230);
+    color: rgb(75, 75, 75);
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.c-accordion {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none ;
+    border-radius: 0 !important;
+}
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion-dark:hover {
+    background-color: rgb(63, 63, 63);
+    color: white;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion-light:hover {
+    background-color: rgb(226, 226, 226);
+    color: black;
+}
+
+.panel {
+    padding: 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    display: none;
+    padding: 10px;
+
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 250px;
+    overflow-x: hidden;
+}
+
+
+.c-panel .item {
+    margin:10px 0;
+}
+
+.panel-dark {
+    background-color: rgb(75, 72, 85);
+    color: #ccc;
+}
+
+.panel-light {
+    background-color: rgb(216, 212, 228);
+    color: rgb(66, 66, 66);
+}
+
+
+.delete:hover {
+    color:white !important;
+}
+
+.delete {
+    color:#dc3545 !important;
+}

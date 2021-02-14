@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Quick edit</title>
+    <link href="./css/main.css" rel='stylesheet'>
+    <link href='./highlight/styles/atom-one-dark.css' rel='stylesheet'>
+    <link href='./css/edit.css' rel='stylesheet'>
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src='./js/res/vue.js'></script>
+    <script src='./js/res/jquery-3.5.1.js'></script>
+    <script src="./bootstrap/js/popper.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./highlight/highlight.pack.js"></script>
+    <script src="./highlight/misbehave.js"></script>
+    <script src='./js/main.js'></script>
+    <script src='./js/edit.js'></script>
+</head>
+<body class='body-dark'>
+  <div class='init-page'><span>Be ready we inilazing the page now<div class="load spinner-border text-light"></div></span></div>
+    <div v-bind='{class:`root-${theme} root`}' class='root visible-sm'>
+        <nav v-bind='{class:`nav-${theme}`}' class="nav navbar navbar-expand">
+            <ul v-bind='{class:`nav-item-${theme}`}' class="navbar-nav">
+                <li v-bind='currentfile == file.index ? file.text == file.oldtext ? {class: "active"} : {class: "active change"} : file.text == file.oldtext ? {} : {class: "change"} ' class="nav-item" v-for='file in files'>
+                  <button v-html='file.short' class='btn btn-secondary' v-on:click="selectFile(file)" href="#"><button class='savefile(this)' v-on:click='save_changes' v-if='file.text != file.oldtext'>Save</button></button>
+                </li>
+              </ul> 
+          </nav>
+
+            <div class='ide'>
+              <pre id="pre"><code id="code" contenteditable="true" autocorrect="on" autocapitalize="on" spellcheck="false"></code></pre>
+            </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+.root {
+  overflow: hidden !important;
+}
+
+@media screen and (min-width: 720px) {
+    .root {
+        width: 90% !important;
+        height: 90% !important;
+    }
+}
+
+
+
+.nav { /* main nav style */
+    width: 100%;
+    height: 100px;
+    padding: 0 !important;
+    background:red;
+    position: fixed;
+    top: -90px;
+    margin-left: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    transition: 500ms;
+}
+
+
+.nav:hover {
+ top: -5px;
+}
+
+.nav-dark { /* dark nav colors */
+    background-color:rgb(51, 51, 51);
+
+}
+
+.nav-light { /* light nav colors */
+
+}
+
+
+.nav-item { /* main nav-item style */
+    /* padding: 1px */
+}
+
+.nav-item button{ /* main nav-item style */
+    float: left;
+    width: 100% ;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.nav-item-dark .nav-item button { /* dark nav-item colors */
+    border: none;
+    background-color:rgb(71, 71, 71);
+    color: rgb(124, 124, 124);
+}
+
+
+.nav-item-dark .active button { /* main nav-item style */
+    background-color:darkgrey;
+    color: rgb(233, 233, 233);
+    font-weight: 600;
+}
+
+.nav-item-light button { /* light nav-item colors */
+
+
+}
+.ide {
+  width: 100%;
+  height: 90%;
+  padding: 10px;
+  overflow: auto;
+}
+
+#code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  color: rgb(255, 255, 255) !important;
+}
+
+
+.change button {
+  background-color: rgb(47, 26, 26) !important;
+}
+
+.savebutton {
+  float: right;
+  height: 20px !important;
+}
+
+/* /////////////////////////////////////////////// */
+
+
+.container {
+  width: 62em;
+  margin: 0 auto;
+  margin-top:5em;
+}
+
+#pre {
+  min-height: 1.5em;
+}
+
+#code {
+  display: block;
+}
+
+[contenteditable] {
+  border-style: Transparent;
+  outline: none;
+}

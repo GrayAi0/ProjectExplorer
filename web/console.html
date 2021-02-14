@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Console</title>
+    <link href="./css/main.css" rel='stylesheet'>
+    <link href="./css/console.css" rel='stylesheet'>    
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src='./js/res/vue.js'></script>
+    <script src='./js/res/jquery-3.5.1.js'></script>
+    <script src="./bootstrap/js/popper.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src='./js/main.js'></script>
+    <script src='./js/console.js'></script>
+</head>
+<body class='body-dark'>
+    <div class='init-page'><span>Be ready we inilazing the page new<div class="load spinner-border text-light"></div></span></div>
+    <div v-bind='{class: `root-${theme}`}' class='root'>
+        
+            <div v-bind='{class: `control-${theme} control`}' class='control'>
+                <button v-if="is_started" class='consolemanage stop btn btn-outline-danger' onclick='stop()'>Stop</button>
+                <button v-else class='consolemanage start btn btn-outline-success' onclick='run()'>Start</button>
+            </div>
+
+            <div class='conosle'>
+                <span></span>
+            </div>
+
+    </div>
+</body>
+
+</html>
